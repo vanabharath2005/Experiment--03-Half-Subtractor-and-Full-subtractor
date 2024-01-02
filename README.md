@@ -33,19 +33,58 @@ Write the detailed procedure here
 
 
 ## Program:
-/*
-Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+HALF SUB
+````
+module halfsub(a,b,differ,borrow);
+input a,b;
+output differ,borrow;
+xor(differ,a,b);
+assign borrow = ~a & b;
+endmodule
+````
+FULL SUB
+````
+module fullsub(a,b,c,borrow,differ);
+input a,b,c;
+output borrow,differ;
+xor(differ,a,b,c);
+assign borrow = (~a)&c | (~a)&b | (b&c);
+endmodule
+````
 
 ## Output:
 
 ## Truthtable
+HALF SUB
+![image](https://github.com/vanabharath2005/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147222071/432cf3b6-f800-4345-9bb1-c540a72705e8)
+
+FULL SUB
+![image](https://github.com/vanabharath2005/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147222071/4fc8e578-a573-4a66-9f87-7f7c3897c2ba)
+
+
 
 
 
 ##  RTL realization
+HALF SUB
+![image](https://github.com/vanabharath2005/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147222071/cea4b596-1f5b-4e3d-948c-e1f03dccfd9c)
+ 
+ FULL SUB
+ ![image](https://github.com/vanabharath2005/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147222071/199aa024-28c4-4044-836c-09d2b67461ad)
+
+  WAVE FORM 
+   HALF SUB
+   ![image](https://github.com/vanabharath2005/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147222071/4b516ada-52ae-4dec-86cd-bd8b827b67e8)
+   FULL SUB
+   ![image](https://github.com/vanabharath2005/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147222071/56cec944-a485-43ae-bec4-f72a24b94e1a)
+
+   
+   
+   
+
+
+
+
 
 
 ## Timing diagram 
